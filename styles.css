@@ -3,6 +3,7 @@ body {
     font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     text-align: center;
     margin: 20px;
+    background-color: #F6FBF4;
 }
 
 .time-container{
@@ -21,6 +22,24 @@ button {
     font-size: 16px;
     margin: 5px;
 }
+
+button.start {
+    background-color: #16a34a;
+    color: #FFFFFF;
+}
+button.start:hover {
+    background-color: #17bd54;
+}
+
+button.stop {
+    background-color: #dc2626;
+    color: #FFFFFF;
+}
+button.stop:hover {
+    background-color: #ff0d0d;
+}
+
+
 h2, h3 {
     margin-top: 20px;
 }

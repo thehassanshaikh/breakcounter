@@ -37,6 +37,8 @@ function setTime(event) {
     remainingTime = parseInt(event.target.getAttribute('data-time')) * 60;
     updateDisplay();
     document.getElementById('startStopButton').textContent = 'Start';
+    document.getElementById('startStopButton').classList.remove('stop');
+    document.getElementById('startStopButton').classList.add('start');
     saveState();
 }
 
@@ -55,6 +57,8 @@ function toggleTimer() {
         logElapsedTime(elapsedThisSession);
         updateTotalTimeDisplay();
         button.textContent = 'Start';
+        button.classList.remove('stop');
+        button.classList.add('start');
         saveState();
     } else {
         remainingTimeInitial = remainingTime;
@@ -65,12 +69,15 @@ function toggleTimer() {
                 clearInterval(timerInterval);
                 alert('Time is up!');
                 button.textContent = 'Start';
+                button.classList.remove('stop');
+                button.classList.add('start');
                 isRunning = false;
             }
             saveState();
         }, 1000);
         button.textContent = 'Stop';
-        
+        button.classList.remove('start');
+        button.classList.add('stop');
     }
     isRunning = !isRunning;
     saveState();
@@ -129,6 +136,8 @@ function resetTimer() {
     totalElapsedTime = 0;
     isRunning = false;
     document.getElementById('startStopButton').textContent = 'Start';
+    document.getElementById('startStopButton').classList.remove('stop');
+    document.getElementById('startStopButton').classList.add('start');
     document.getElementById('timeDisplay').textContent = '00:00';
     document.getElementById('totalTimeDisplay').textContent = '00:00';
     document.getElementById('timeLogTable').querySelector('tbody').innerHTML = '';
